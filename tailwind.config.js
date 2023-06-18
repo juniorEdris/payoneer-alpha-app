@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        hover: "0px 60px 80px -14px rgba(0, 0, 0, 0.08)",
+      },
       screens: {
         widescreen: { raw: "(min-aspect-ratio: 3/2)" },
         tallscreen: { raw: "(min-aspect-ratio: 13/20)" },
@@ -34,6 +37,7 @@ module.exports = {
         "button-bg": "#2B2B2B",
         "counter-yellow": "#FFC221",
         placeholder: "#BEBEBE",
+        "card-border": "#f3f3f3",
       },
     },
   },

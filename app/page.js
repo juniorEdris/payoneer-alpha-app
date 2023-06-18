@@ -1,3 +1,4 @@
+import CategorySection from "@/components/Home/CategoryProducts.js";
 import HeroSection from "@/components/Home/HeroSection";
 import TrendingProducts from "@/components/Home/TrendingProducts";
 
@@ -9,9 +10,7 @@ export default async function Home() {
     <main className="min-h-screen grid">
       <HeroSection />
       <TrendingProducts products={data?.products?.slice(0, 10)} />
-      <section className="widescreen:min-h-screen tallscreen:min-h-screen">
-        <h1 className="text-5xl">Shob by Category</h1>
-      </section>
+      <CategorySection products={data?.products?.slice(11, 20)} />
       <section className="widescreen:min-h-screen tallscreen:min-h-screen">
         <h1 className="text-5xl">Featured Product</h1>
       </section>

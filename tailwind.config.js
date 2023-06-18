@@ -21,6 +21,7 @@ module.exports = {
         hero: "url('/assets/images/hero/hero_bg.png')",
       },
       colors: {
+        // #475E68
         dark: "#000002",
         light: "#FFFFFF",
         "price-orange": "#FF4516",

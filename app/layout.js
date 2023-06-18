@@ -1,9 +1,13 @@
 import Header from "@/components/Primary/Header/Header";
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Poppins, Spectral } from "next/font/google";
 
-const poppins = Poppins({
+export const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  preload: false,
+});
+export const spectralFont = Spectral({
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
   preload: false,
 });
 

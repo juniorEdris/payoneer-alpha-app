@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Container from "../Container";
+import Container from "../../Primary/Container";
 import Link from "next/link";
+import { spectralFont } from "@/app/layout";
 
 const HeroSection = () => {
   const sliderImages = [
@@ -16,16 +17,18 @@ const HeroSection = () => {
     },
   ];
   return (
-    <section className="widescreen:min-h-[calc(100vh-78px)] tallscreen:min-h-[calc(100vh-78px)] bg-hero bg-no-repeat">
+    <section className="widescreen:negetive-min-height tallscreen:negetive-min-height bg-hero bg-no-repeat">
       <Container>
         <div className="grid md:grid-cols-[1fr_auto]">
           <div className="grid grid-cols-2">
             <div className="grid gap-1 place-content-center min-h-screen">
-              <p className="text-xs">100% QUALITY, 100% SATISFACTION</p>
+              <p className={`text-sm ${spectralFont.className}`}>
+                100% QUALITY, 100% SATISFACTION
+              </p>
               <h1 className="text-[68px] leading-[74px] font-extrabold">
                 Where the world comes to shop.
               </h1>
-              <p className="md:text-lg">
+              <p className="md:text-lg opacity-70">
                 Life is hard enough already. Let us make it a little easier,
                 Vision of Snipshop for a better outlook.
               </p>

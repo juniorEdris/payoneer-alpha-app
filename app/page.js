@@ -1,12 +1,14 @@
-import HeroSection from "@/components/Primary/Home/HeroSection";
+import HeroSection from "@/components/Home/HeroSection";
+import TrendingProducts from "@/components/Home/TrendingProducts";
 
-export default function Home() {
+export default async function Home() {
+  const res = await fetch("https://dummyjson.com/products");
+  const data = await res.json();
+  // console.log({ data: data?.products });
   return (
     <main className="min-h-screen grid">
       <HeroSection />
-      <section className="widescreen:min-h-screen tallscreen:min-h-screen">
-        <h1 className="text-5xl">Trending Products</h1>
-      </section>
+      <TrendingProducts products={data?.products?.slice(0, 10)} />
       <section className="widescreen:min-h-screen tallscreen:min-h-screen">
         <h1 className="text-5xl">Shob by Category</h1>
       </section>

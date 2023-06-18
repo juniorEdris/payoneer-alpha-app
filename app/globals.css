@@ -38,6 +38,15 @@ body {
     flex-direction: column;
   }
 
+  .category-product-card {
+    width: 355px;
+    min-height: 290px;
+
+    background: #ffffff;
+    border: 1px solid #f3f3f3;
+    border-radius: 34px;
+  }
+
   .featured-product-card {
     width: 310px;
     min-height: 370px;

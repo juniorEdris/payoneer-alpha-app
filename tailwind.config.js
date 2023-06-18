@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      letterSpacing: {
+        tightest: "-0.01em",
+      },
       boxShadow: {
         hover: "0px 60px 80px -14px rgba(0, 0, 0, 0.08)",
       },

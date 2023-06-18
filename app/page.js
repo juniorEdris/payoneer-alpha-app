@@ -1,9 +1,9 @@
+import HeroSection from "@/components/Primary/Home/HeroSection";
+
 export default function Home() {
   return (
-    <main className="min-h-screen grid place-content-center">
-      <section className="widescreen:min-h-screen tallscreen:min-h-screen">
-        <h1 className="text-5xl">Hero</h1>
-      </section>
+    <main className="min-h-screen grid">
+      <HeroSection />
       <section className="widescreen:min-h-screen tallscreen:min-h-screen">
         <h1 className="text-5xl">Trending Products</h1>
       </section>

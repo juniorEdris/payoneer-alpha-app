@@ -15,12 +15,17 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-hero":
+          "linear-gradient(231.37deg, #7DE1EF 15.49%, #D3F6FB 84.94%)",
+
+        hero: "url('/assets/images/hero/hero_bg.png')",
       },
       colors: {
         dark: "#000002",
         light: "#FFFFFF",
-        price: "#FF4516",
+        "price-orange": "#FF4516",
         "search-bg": "#4DC3F7",
+        "price-dark": "#2A2A2A",
         "secondary-dark": "#262626",
         "header-blue": "#1E66FF",
         "secondary-blue": "#1D65FF",

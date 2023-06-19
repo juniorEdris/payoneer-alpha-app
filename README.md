@@ -10,7 +10,7 @@ Frontend.Ecommerce.Next.App [Documantation](https://amarischool.notion.site/Fron
 
     # Repository
 
-        https://github.com/juniorEdris/protom-alo-application-interview.git
+[Repository](https://github.com/juniorEdris/protom-alo-application-interview.git)
 
     Then, run the development server:
 
@@ -22,8 +22,16 @@ Frontend.Ecommerce.Next.App [Documantation](https://amarischool.notion.site/Fron
     pnpm dev
     ```
 
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Deployed Version
 
 [payoneer alpha app](https://payoneer-alpha-next-app.vercel.app/)
+
+## Developer Info
+
+**name: Md Imthiaz Chy Ragib**
+
+**email: mohammedimthiaz17@gmail.com**
+
+**linkedin: [linkedin.eftekar-raghib/](https://www.linkedin.com/in/eftekar-raghib/)**

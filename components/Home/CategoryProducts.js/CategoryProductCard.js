@@ -3,7 +3,7 @@ import { BsPlusCircle } from "react-icons/bs";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="category-product-card hover:shadow-hover">
+    <div className="category-product-card hover:shadow-hover transition duration-75">
       <div className="p-9">
         <div className="h-[162px] w-full relative overflow-hidden rounded-[12px] border border-card-border">
           <Image

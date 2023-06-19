@@ -1,6 +1,9 @@
+import BrandSection from "@/components/Home/BrandSection";
 import CategorySection from "@/components/Home/CategoryProducts.js";
 import FeaturedProducts from "@/components/Home/FeaturedProducts";
 import HeroSection from "@/components/Home/HeroSection";
+import SocialSection from "@/components/Home/SocialSection";
+import Testimonial from "@/components/Home/Testimonials";
 import TrendingProducts from "@/components/Home/TrendingProducts";
 
 export default async function Home() {
@@ -13,12 +16,9 @@ export default async function Home() {
       <TrendingProducts products={data?.products?.slice(0, 10)} />
       <CategorySection products={data?.products?.slice(11, 20)} />
       <FeaturedProducts products={data?.products?.slice(21, 30)} />
-      <section className="widescreen:min-h-screen tallscreen:min-h-screen">
-        <h1 className="text-5xl">Explore Most Popular Brands</h1>
-      </section>
-      <section className="widescreen:min-h-screen tallscreen:min-h-screen">
-        <h1 className="text-5xl">Sell Easily on Socialmedia</h1>
-      </section>
+      <BrandSection />
+      <SocialSection />
+      <Testimonial />
     </main>
   );
 }

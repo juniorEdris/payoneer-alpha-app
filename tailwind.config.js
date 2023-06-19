@@ -25,6 +25,7 @@ module.exports = {
           "linear-gradient(231.37deg, #7DE1EF 15.49%, #D3F6FB 84.94%)",
 
         hero: "url('/assets/images/hero/hero_bg.png')",
+        brand: "url('/assets/images/hero/brand-bg.png')",
       },
       colors: {
         // #475E68
@@ -41,6 +42,7 @@ module.exports = {
         "counter-yellow": "#FFC221",
         placeholder: "#BEBEBE",
         "card-border": "#f3f3f3",
+        "secondary-bg": "#F4FCFF",
       },
     },
   },

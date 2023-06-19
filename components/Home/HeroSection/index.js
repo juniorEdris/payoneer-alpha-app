@@ -17,7 +17,7 @@ const HeroSection = () => {
     },
   ];
   return (
-    <section className="widescreen:negetive-min-height tallscreen:negetive-min-height bg-hero bg-no-repeat">
+    <section className="bg-hero bg-no-repeat bg-center">
       <Container>
         <div className="grid md:grid-cols-[1fr_auto]">
           <div className="grid grid-cols-2">

@@ -3,6 +3,7 @@ import ProductCard from "./FeaturedProductCard";
 import Container from "@/components/Primary/Container";
 import Link from "next/link";
 import { BiRightArrowAlt } from "react-icons/bi";
+import Slider from "@/components/Primary/Slider";
 
 const FeaturedProducts = ({ products }) => {
   return (
@@ -24,11 +25,12 @@ const FeaturedProducts = ({ products }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8">
+        <Slider options={{ items: 3 }}>
+          {/**grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8 */}
           {products?.map((item) => (
             <ProductCard key={item?.id} product={item} />
           ))}
-        </div>
+        </Slider>
       </Container>
     </section>
   );

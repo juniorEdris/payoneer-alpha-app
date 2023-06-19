@@ -1,6 +1,7 @@
 import { spectralFont } from "@/app/layout";
 import Tabs from "./SectionTab";
 import ProductCard from "./TrendingProductCard";
+import Container from "@/components/Primary/Container";
 
 const TrendingProducts = ({ products = [] }) => {
   return (
@@ -18,11 +19,14 @@ const TrendingProducts = ({ products = [] }) => {
         <Tabs />
       </div>
 
-      <div className="my-5 flex gap-2 flex-wrap justify-end">
-        {products?.map((product) => (
-          <ProductCard key={product?.id} product={product} />
-        ))}
-      </div>
+      <Container>
+        <div className="my-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+          {/**trending-products-wrapper overflow-x-auto w-screen pb-5 px-9 */}
+          {products?.map((product) => (
+            <ProductCard key={product?.id} product={product} />
+          ))}
+        </div>
+      </Container>
     </section>
   );
 };

@@ -28,14 +28,14 @@ const ProductCard = ({ product }) => {
             ${product?.price.toFixed(2)} USD
           </p>
         </div>
-        <div className="text-center">
-          <Link
-            href={`/`}
-            className="uppercase text-lg font-semibold px-5 py-2 text-light bg-[#001439] rounded-[24px] max-w-[200px] text-center place-self-center inline-block"
-          >
-            order now
-          </Link>
-        </div>
+      </div>
+      <div className="text-center">
+        <Link
+          href={`/`}
+          className="uppercase text-lg font-semibold px-5 py-2 text-light bg-[#001439] rounded-[24px] max-w-[200px] text-center place-self-center inline-block"
+        >
+          order now
+        </Link>
       </div>
     </section>
   );

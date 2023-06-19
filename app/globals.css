@@ -69,29 +69,3 @@ body {
   pointer-events: none !important;
   opacity: 0.7 !important;
 }
-
-/* scroll design */
-.trending-products-wrapper::-webkit-scrollbar{opacity: 0;}
-.trending-products-wrapper:hover .trending-products-wrapper::-webkit-scrollbar{
-  opacity: 1;
-}
-
-.trending-products-wrapper::-webkit-scrollbar-track {
-  width: 3px;
-  height: 6px;
-  border-radius: 24px;
-  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  background-color: #f5f5f5;
-}
-
-.trending-products-wrapper::-webkit-scrollbar {
-  width: 3px;
-  height: 6px;
-  border-radius: 24px;
-  background-color: #f5f5f5;
-}
-
-.trending-products-wrapper::-webkit-scrollbar-thumb {
-  height: 6px;
-  background-color: #1E66FF;
-}

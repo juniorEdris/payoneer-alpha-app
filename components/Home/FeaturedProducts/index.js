@@ -25,7 +25,7 @@ const FeaturedProducts = ({ products }) => {
           </div>
         </div>
 
-        <Slider options={{ items: 3 }}>
+        <Slider options={{ items: 4 }}>
           {/**grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8 */}
           {products?.map((item) => (
             <ProductCard key={item?.id} product={item} />

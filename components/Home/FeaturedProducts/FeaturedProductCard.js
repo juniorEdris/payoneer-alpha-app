@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const ProductCard = ({ product }) => {
   return (
-    <section className="grid gap-5">
-      <Link href={`/`}>
-        <div className="featured-product-card">
+    <section className="grid gap-5 ">
+      <Link href={`/`} className="group/freatured-prod">
+        <div className="featured-product-card group-hover/freatured-prod:hover:shadow-featured-prod-hover transition duration-75">
           <div className="">
             <div className="h-[245px] w-full relative overflow-hidden rounded-[25px] border border-[#f5f5f5]">
               <span className="uppercase absolute top-6 left-6 bg-blue-600 z-10 p-1 text-white text-xs font-semibold  rounded-[4px] shadow-sm">

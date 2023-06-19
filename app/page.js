@@ -13,7 +13,7 @@ export default async function Home() {
   return (
     <main className="min-h-screen grid overflow-x-hidden">
       <HeroSection />
-      <TrendingProducts products={data?.products?.slice(0, 10)} />
+      <TrendingProducts products={data?.products?.slice(0, 5)} />
       <CategorySection products={data?.products?.slice(11, 20)} />
       <FeaturedProducts products={data?.products?.slice(21, 30)} />
       <BrandSection />

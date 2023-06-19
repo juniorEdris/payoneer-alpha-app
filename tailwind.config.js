@@ -12,6 +12,7 @@ module.exports = {
       },
       boxShadow: {
         hover: "0px 60px 80px -14px rgba(0, 0, 0, 0.08)",
+        "featured-prod-hover": "0px 8px 18px -7px rgba(0, 0, 0, 0.1)",
       },
       screens: {
         widescreen: { raw: "(min-aspect-ratio: 3/2)" },

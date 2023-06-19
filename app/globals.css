@@ -28,7 +28,6 @@ body {
   .trending-product-card {
     width: 250px;
     min-height: 160px;
-    background: #e9ebf0;
     border: 1px solid #ededed;
     box-shadow: 5px 13px 18px -5px rgba(128, 128, 128, 0.1);
     backdrop-filter: blur(4.5px);
@@ -53,7 +52,19 @@ body {
 
     background: #fffdfe;
     border: 1px solid #f5f5f5;
-    box-shadow: 0px 8px 18px -7px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
   }
+}
+
+/* Carrusel styles */
+
+.owl-nav {
+  position: absolute;
+  bottom: -40px;
+  right: 101px;
+}
+.owl-carousel .owl-nav button.owl-prev.disabled,
+.owl-carousel .owl-nav button.owl-next.disabled {
+  pointer-events: none !important;
+  opacity: 0.7 !important;
 }

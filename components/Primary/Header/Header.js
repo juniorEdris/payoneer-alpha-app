@@ -12,7 +12,7 @@ const Header = () => {
           <div className="md:place-self-center">
             <Link href="/">
               <Image
-                src={`/assets/images/logo.png`}
+                src={`/assets/images/Logo.png`}
                 alt="logo"
                 height={26}
                 width={96}

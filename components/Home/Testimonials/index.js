@@ -2,18 +2,17 @@ import Image from "next/image";
 
 const Testimonial = () => {
   return (
-    <section className="widescreen:min-h-screen tallscreen:min-h-screen py-20">
+    <section className="widescreen:min-h-screen tallscreen:min-h-screen pt-20">
       <div className="grid md:grid-cols-2">
         <div className="bg-[#CEF0FF] rounded-tr-2xl rounded-br-2xl">
-          <div className="h-[450px] w-[250px] relative overflow-hidden">
-            <Image
-              className="object-cover absolute right-0"
-              src={`/assets/images/social/guy.png`}
-              fill={true}
-              priority={false}
-              alt={"brands"}
-            />
-          </div>
+          <Image
+            className="text-right m-0"
+            src={`/assets/images/social/guy.png`}
+            width={350}
+            height={150}
+            priority={true}
+            alt={"brands"}
+          />
         </div>
         <div className="grid place-content-center p-8 gap-4">
           <div className={`grid gap-2`}>

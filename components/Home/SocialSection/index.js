@@ -29,7 +29,7 @@ const SocialSection = () => {
           </div>
           <div className="grid">
             <div className="">
-              <div className="h-[718px] w-[718px] relative overflow-hidden border border-card-border">
+              <div className="h-[718px] w-[718px] relative overflow-hidden">
                 <Image
                   className="object-cover"
                   src={`/assets/images/social/sc-bg.png`}

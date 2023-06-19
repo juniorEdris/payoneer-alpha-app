@@ -11,7 +11,7 @@ export default async function Home() {
   const data = await res.json();
 
   return (
-    <main className="min-h-screen grid">
+    <main className="min-h-screen grid overflow-x-hidden">
       <HeroSection />
       <TrendingProducts products={data?.products?.slice(0, 10)} />
       <CategorySection products={data?.products?.slice(11, 20)} />

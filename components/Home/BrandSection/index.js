@@ -17,10 +17,10 @@ const BrandSection = () => {
     <section className="widescreen:min-h-screen tallscreen:min-h-screen py-12 bg-secondary-bg">
       <Container>
         <div className="grid lg:grid-cols-2 gap-8 place-content-center min-h-screen">
-          <div className="bg-brand bg-no-repeat grid grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
             {brands?.map((item) => (
               <div className="" key={item?.id}>
-                <div className="h-[208px] w-[208px] relative overflow-hidden rounded-[12px] border border-card-border">
+                <div className="h-[208px] w-[208px] relative overflow-hidden rounded-[12px]">
                   <Image
                     className="object-cover"
                     src={item.image}

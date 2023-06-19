@@ -2,6 +2,7 @@ import Image from "next/image";
 import Container from "../Container";
 import Search from "./Search";
 import Nav from "./Nav";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -9,13 +10,15 @@ const Header = () => {
       <Container>
         <section className="grid grid-cols-2 md:grid-cols-[280px_1fr_1fr] py-3 text-light">
           <div className="md:place-self-center">
-            <Image
-              src={`/assets/images/logo.png`}
-              alt="logo"
-              height={120}
-              width={120}
-              priority={true}
-            />
+            <Link href="/">
+              <Image
+                src={`/assets/images/logo.png`}
+                alt="logo"
+                height={26}
+                width={96}
+                priority={true}
+              />
+            </Link>
           </div>
           <div className="hidden md:block">
             <Search />

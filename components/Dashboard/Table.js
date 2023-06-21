@@ -1,6 +1,7 @@
-const Table = ({ data = [], handleDelete }) => {
+"use client";
+const Table = ({ data = [], handleDelete, handleUpdateModal }) => {
   return (
-    <div className="relative h-96 overflow-y-auto overflow-x-auto px-2">
+    <div className="relative overflow-x-auto px-2">
       <table className="max-w-7xl text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
           <tr>
@@ -19,32 +20,32 @@ const Table = ({ data = [], handleDelete }) => {
           </tr>
         </thead>
         <tbody className="">
-          {data?.map(({ id = "", title = "", price = "", category = "" }) => (
+          {data?.map((item) => (
             <tr
-              key={id}
+              key={item?.id}
               className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
             >
               <th
                 scope="row"
                 className="capitalize px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
               >
-                {title}
+                {item?.title}
               </th>
-              <td className="px-6 py-4">{category}</td>
-              <td className="px-6 py-4">{price}</td>
+              <td className="px-6 py-4">{item?.category}</td>
+              <td className="px-6 py-4">{item?.price}</td>
               <td className="px-6 py-4">
                 <div className="flex flex-wrap items-center gap-3">
                   <button
                     className="py-1 px-3 rounded-md text-sm text-light bg-blue-500 hover:bg-opacity-80"
                     type="button"
-                    onClick={() => {}}
+                    onClick={() => handleUpdateModal(item)}
                   >
                     Edit
                   </button>
                   <button
                     className="py-1 px-3 rounded-md text-sm text-light bg-red-700 hover:bg-opacity-80"
                     type="button"
-                    onClick={() => handleDelete(id)}
+                    onClick={() => handleDelete(item?.id)}
                   >
                     Delete
                   </button>

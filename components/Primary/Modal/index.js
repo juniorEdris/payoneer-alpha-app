@@ -16,6 +16,7 @@ const Modal = ({
   secondaryAction,
   secondaryActionLabel,
   danger = false,
+  secondaryDanger = false,
 }) => {
   const [showModal, setShowModal] = useState(isOpen);
 
@@ -158,6 +159,7 @@ const Modal = ({
                       disabled={disabled}
                       label={secondaryActionLabel}
                       onClick={handleSecondaryAction}
+                      danger={secondaryDanger}
                     />
                   )}
                   <Button

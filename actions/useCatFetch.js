@@ -3,8 +3,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const useFetch = () => {
-  const [data, setData] = useState([]);
+const useCatFetch = () => {
+  const [category, setCategory] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -13,11 +13,11 @@ const useFetch = () => {
     const signal = controller.signal;
     setLoading(true);
     (async () => {
-      const res = await axios.get(`https://dummyjson.com/products?limit=10`, {
+      const res = await axios.get(`https://dummyjson.com/products/categories`, {
         signal,
       });
       if (res?.status === 200) {
-        setData(res?.data);
+        setCategory(res?.data);
         setLoading(false);
       }
     })();
@@ -26,7 +26,7 @@ const useFetch = () => {
       setLoading(false);
     };
   }, []);
-  return { data, setData, loading };
+  return { category, loading };
 };
 
-export default useFetch;
+export default useCatFetch;

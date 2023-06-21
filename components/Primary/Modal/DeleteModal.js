@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { toast } from "react-hot-toast";
 import Modal from ".";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -12,10 +11,10 @@ const DeleteModal = ({ id, isOpen, handleClose, data, setData }) => {
 
   const onSubmit = useCallback(async () => {
     setIsLoading(true);
+    const _id = id.toString();
     try {
-      const res = await axios.delete(`https://dummyjson.com/products/${id}`);
+      const res = await axios.delete(`https://dummyjson.com/products/${_id}`);
       if (res?.status === 200) {
-        toast.success(`Operation successfull!`);
         setData((state) => ({
           ...state,
           products: [...data]?.filter((item) => item?.id !== id),
@@ -29,7 +28,14 @@ const DeleteModal = ({ id, isOpen, handleClose, data, setData }) => {
     } catch (error) {
       setIsLoading(false);
       console.log(error);
-      toast.error(`Operation unsuccessful!`);
+      //   As after adding product, its not geting removed in server, so I removed from state
+      setData((state) => ({
+        ...state,
+        products: [...data]?.filter((item) => item?.id !== id),
+      }));
+      setTimeout(() => {
+        handleClose();
+      }, 300);
     }
   }, [id, handleClose, router, data, setData]);
 

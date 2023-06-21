@@ -1,9 +1,12 @@
+"use client";
 import { FaRegUser } from "react-icons/fa";
 import { FiHeart, FiShoppingBag } from "react-icons/fi";
-// import { IoBagOutline } from "react-icons/io5";
+import { MdSpaceDashboard } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 const Nav = () => {
+  const router = useRouter();
   return (
     <nav>
       <ul className="flex items-center gap-3 lg:gap-5">
@@ -36,6 +39,15 @@ const Nav = () => {
         <li className="">
           <span role="button" tabIndex={0}>
             <RxHamburgerMenu className="text-base md:text-lg lg:text-2xl font-black" />
+          </span>
+        </li>
+        <li className="">
+          <span role="button" tabIndex={0}>
+            <MdSpaceDashboard
+              className="text-base md:text-lg lg:text-2xl font-black"
+              onClick={() => router.push("/dashboard")}
+              title="dashboard"
+            />
           </span>
         </li>
       </ul>

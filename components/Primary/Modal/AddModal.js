@@ -19,6 +19,7 @@ const AddModal = ({ isOpen, handleClose, data, setData, categories }) => {
 
   const onSubmit = useCallback(async () => {
     setIsLoading(true);
+    setErrors({});
     if (!form?.title) {
       setErrors({ title: "no title provided" });
       setIsLoading(false);
@@ -29,7 +30,7 @@ const AddModal = ({ isOpen, handleClose, data, setData, categories }) => {
       setIsLoading(false);
       return;
     }
-    if (!form?.price) {
+    if (!form?.price || isNaN(form?.price)) {
       setErrors({ price: "no price provided" });
       setIsLoading(false);
       return;
@@ -55,6 +56,16 @@ const AddModal = ({ isOpen, handleClose, data, setData, categories }) => {
       toast.error(`Operation unsuccessful!`);
     }
   }, [form, handleClose, router, data, setData]);
+
+  const handleAllClose = () => {
+    handleClose();
+    setForm({
+      title: "",
+      category: "",
+      price: "",
+    });
+    setErrors({});
+  };
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -113,10 +124,10 @@ const AddModal = ({ isOpen, handleClose, data, setData, categories }) => {
       isOpen={isOpen}
       title="Add Product"
       actionLabel="Add"
-      onClose={handleClose}
+      onClose={handleAllClose}
       onSubmit={onSubmit}
       body={bodyContent}
-      secondaryAction={handleClose}
+      secondaryAction={handleAllClose}
       secondaryActionLabel="Close"
       secondaryDanger
     />

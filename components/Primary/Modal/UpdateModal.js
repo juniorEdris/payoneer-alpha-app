@@ -24,8 +24,19 @@ const UpdateModal = ({
     setForm((state) => ({ ...state, [e.target.id]: e.target.value }));
   };
 
+  const handleAllClose = () => {
+    handleClose();
+    setForm({
+      title: "",
+      category: "",
+      price: "",
+    });
+    setErrors({});
+  };
+
   const onSubmit = useCallback(() => {
     setIsLoading(true);
+    setErrors({});
     if (!form?.title) {
       setErrors({ title: "no title provided" });
       setIsLoading(false);
@@ -36,7 +47,7 @@ const UpdateModal = ({
       setIsLoading(false);
       return;
     }
-    if (!form?.price) {
+    if (!form?.price || isNaN(form?.price)) {
       setErrors({ price: "no price provided" });
       setIsLoading(false);
       return;
@@ -128,10 +139,10 @@ const UpdateModal = ({
       isOpen={isOpen}
       title="Update Product"
       actionLabel="Update"
-      onClose={handleClose}
+      onClose={handleAllClose}
       onSubmit={onSubmit}
       body={bodyContent}
-      secondaryAction={handleClose}
+      secondaryAction={handleAllClose}
       secondaryActionLabel="Close"
       secondaryDanger
     />

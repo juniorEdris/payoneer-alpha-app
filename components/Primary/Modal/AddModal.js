@@ -44,6 +44,7 @@ const AddModal = ({ isOpen, handleClose, data, setData, categories }) => {
         }));
         setTimeout(() => {
           handleClose();
+          setForm({ title: "", category: "", price: "" });
         }, 300);
         setIsLoading(false);
         router.refresh();

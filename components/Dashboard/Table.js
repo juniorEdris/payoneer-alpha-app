@@ -1,5 +1,6 @@
 "use client";
 const Table = ({ data = [], handleDelete, handleUpdateModal }) => {
+  data = data.length ? data.sort((a, b) => (a?.id < b?.id ? 1 : -1)) : [];
   return (
     <div className="relative overflow-x-auto px-2">
       <table className="max-w-7xl text-sm text-left text-gray-500 dark:text-gray-400">
@@ -32,7 +33,7 @@ const Table = ({ data = [], handleDelete, handleUpdateModal }) => {
                 {item?.title}
               </th>
               <td className="px-6 py-4">{item?.category}</td>
-              <td className="px-6 py-4">{item?.price}</td>
+              <td className="px-6 py-4">${item?.price}</td>
               <td className="px-6 py-4">
                 <div className="flex flex-wrap items-center gap-3">
                   <button

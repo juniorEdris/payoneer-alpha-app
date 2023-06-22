@@ -41,7 +41,7 @@ const UpdateModal = ({
       setIsLoading(false);
       return;
     }
-    console.log({ id });
+
     // as updating using api is returning error "404 not found" I updated localy to show the change.
     try {
       const updatedData = [...data].map((item) => {

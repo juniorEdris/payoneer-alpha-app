@@ -6,7 +6,6 @@ import Modal from ".";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Input from "../Input";
-import Heading from "../Heading";
 
 const AddModal = ({ isOpen, handleClose, data, setData, categories }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -58,7 +57,6 @@ const AddModal = ({ isOpen, handleClose, data, setData, categories }) => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Add Product" subtitle="" />
       <Input
         id="title"
         label="Product name"
@@ -112,8 +110,8 @@ const AddModal = ({ isOpen, handleClose, data, setData, categories }) => {
     <Modal
       disabled={isLoading}
       isOpen={isOpen}
-      title="Delete"
-      actionLabel="Add Product"
+      title="Add Product"
+      actionLabel="Add"
       onClose={handleClose}
       onSubmit={onSubmit}
       body={bodyContent}

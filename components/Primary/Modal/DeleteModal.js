@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import Modal from ".";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Heading from "../Heading";
 
 const DeleteModal = ({ id, isOpen, handleClose, data, setData }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +42,9 @@ const DeleteModal = ({ id, isOpen, handleClose, data, setData }) => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-semibold text-red-700">Delete item?</h1>
+      <h1 className="text-red-700">
+        <Heading center title="Delete Product?" subtitle="" />
+      </h1>
     </div>
   );
 

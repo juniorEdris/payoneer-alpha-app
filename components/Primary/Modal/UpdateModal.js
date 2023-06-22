@@ -1,12 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { toast } from "react-hot-toast";
 import Modal from ".";
-import axios from "axios";
 import { useRouter } from "next/navigation";
 import Input from "../Input";
-import Heading from "../Heading";
 
 const UpdateModal = ({
   id,
@@ -27,7 +24,7 @@ const UpdateModal = ({
     setForm((state) => ({ ...state, [e.target.id]: e.target.value }));
   };
 
-  const onSubmit = useCallback(async () => {
+  const onSubmit = useCallback(() => {
     setIsLoading(true);
     if (!form?.title) {
       setErrors({ title: "no title provided" });
@@ -45,25 +42,28 @@ const UpdateModal = ({
       return;
     }
     console.log({ id });
+    // as updating using api is returning error "404 not found" I updated localy to show the change.
     try {
-      const res = await axios.put(`https://dummyjson.com/products/${id}`, form);
-      if (res?.status === 200) {
-        console.log(res);
-        toast.success(`Operation successfull!`);
-        setData((state) => ({
-          ...state,
-          products: [...data, { ...res?.data }],
-        }));
-        setTimeout(() => {
-          handleClose();
-        }, 300);
-        setIsLoading(false);
-        router.refresh();
-      }
+      const updatedData = [...data].map((item) => {
+        if (item?.id === id) {
+          item.title = form?.title;
+          item.category = form?.category;
+          item.price = form?.price;
+        }
+        return item;
+      });
+      setData((state) => ({
+        ...state,
+        products: updatedData,
+      }));
+      setTimeout(() => {
+        handleClose();
+      }, 300);
+      setIsLoading(false);
+      router.refresh();
     } catch (error) {
       setIsLoading(false);
       console.log(error);
-      toast.error(`Operation unsuccessful!`);
     }
   }, [id, form, handleClose, router, data, setData]);
 
@@ -73,7 +73,6 @@ const UpdateModal = ({
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Add Product" subtitle="" />
       <Input
         id="title"
         label="Product name"
@@ -127,8 +126,8 @@ const UpdateModal = ({
     <Modal
       disabled={isLoading}
       isOpen={isOpen}
-      title="Delete"
-      actionLabel="Add Product"
+      title="Update Product"
+      actionLabel="Update"
       onClose={handleClose}
       onSubmit={onSubmit}
       body={bodyContent}
